@@ -27,3 +27,19 @@ repos:
     rev: v1.32.0
     hooks:
       - id: yamllint
+
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/conventional-changelog/commitlint
+    rev: v11.0.0
+    hooks:
+      - id: commitlint
+        args: ["--config", ".commitlintrc.js"]
