@@ -37,8 +37,8 @@ A rigorously structured Python boilerplate following Domain-Driven Design (DDD) 
 
 ### Installation
 ```bash
-git clone https://github.com/{{username}}/{{repo}}.git
-cd {{repo}}
+git clone [https://github.com/SPRIME01/Python-Clean-Architecture-Boilerplate.git](Python-Clean-Architecture-Boilerplate)
+cd Python-Clean-Architecture-Boilerplate
 
 # Create virtual environment and install dependencies
 uv venv
