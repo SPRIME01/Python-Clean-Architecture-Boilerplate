@@ -84,6 +84,33 @@ make docs
 docstring-gen --style=google --input=src/
 ```
 
+### Running the Project in Docker
+```bash
+# Build the Docker image
+docker build -t project-boilerplate .
+
+# Run the Docker container
+docker run -p 8000:8000 project-boilerplate
+```
+
+### Security Checks
+```bash
+# Run security checks using Bandit
+bandit -r src
+```
+
+### Dependency Updates
+```bash
+# Run dependency updates using Dependabot
+dependabot update
+```
+
+### Performance Testing
+```bash
+# Run performance tests using Locust
+locust -f tests/performance/locustfile.py
+```
+
 ## Project Structure 🌳
 
 ```text

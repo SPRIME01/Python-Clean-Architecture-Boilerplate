@@ -21,3 +21,26 @@ jobs:
         with:
           name: documentation
           path: site/
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: uv pip install -e .[dev]
+      - run: bandit -r src
+
+  dependency-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dependabot/fetch-metadata@v1
+      - run: dependabot update
+
+  performance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+      - run: uv pip install -e .[dev]
+      - run: locust -f tests/performance/locustfile.py
