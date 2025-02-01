@@ -43,4 +43,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - run: uv pip install -e .[dev]
+      - run: yamlfmt
       - run: locust -f tests/performance/locustfile.py

@@ -9,6 +9,7 @@ test:
 lint:
     ruff check src
     mypy src
+    yamlfmt
     yamllint . -c pyproject.toml
     interrogate src
 
@@ -18,3 +19,6 @@ docs:
 clean:
     find . -type d -name '__pycache__' -exec rm -rf {} +
     rm -rf .coverage htmlcov
+
+yamlfmt:
+    yamlfmt -c pyproject.toml
